@@ -99,3 +99,4 @@ export class AppComponent {
 	this.selectedHero = hero;
     }
 }
+
