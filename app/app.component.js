@@ -9,12 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-exports.Hero = Hero;
+var hero_1 = require('./hero');
 var HEROES = [
     { id: 11, name: 'Thor' },
     { id: 12, name: 'Captain America' },
@@ -30,7 +25,7 @@ var HEROES = [
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
-        this.selectedHero = Hero;
+        this.selectedHero = hero_1.Hero;
         this.heroes = HEROES;
     }
     AppComponent.prototype.onSelect = function (hero) {
@@ -39,8 +34,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\t<h1>{{title}}</h1>\n\n\t<h2>My Heroes</h2>\n\t<ul class=\"heroes\">\n\t    <li *ngFor=\"let hero of heroes\" (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\">\n\t        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t    </li>\n\t</ul>\n\n\t<div *ngIf=\"selectedHero\">\n\t    <h2>{{selectedHero.name}} details!</h2>\n\t    <div><label>ID: </label> {{selectedHero.id}}</div>\n\t    <div>\n\t        <label>Name: </label>\n\t        <input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\" />\n\t    </div>\n\t</div>\n\t",
-            styles: ["\n\t  .selected {\n\t  background-color: #CFD8DC !important;\n    color: white;\n  }\n  .heroes {\n    margin: 0 0 2em 0;\n    list-style-type: none;\n    padding: 0;\n    width: 15em;\n  }\n  .heroes li {\n    cursor: pointer;\n    position: relative;\n    left: 0;\n    background-color: #EEE;\n    margin: .5em;\n    padding: .3em 0;\n    height: 1.6em;\n    border-radius: 4px;\n  }\n  .heroes li.selected:hover {\n    background-color: #BBD8DC !important;\n    color: white;\n  }\n  .heroes li:hover {\n    color: #607D8B;\n    background-color: #DDD;\n    left: .1em;\n  }\n  .heroes .text {\n    position: relative;\n    top: -3px;\n  }\n  .heroes .badge {\n    display: inline-block;\n    font-size: small;\n    color: white;\n    padding: 0.8em 0.7em 0 0.7em;\n    background-color: #607D8B;\n    line-height: 1em;\n    position: relative;\n    left: -1px;\n    top: -4px;\n    height: 1.8em;\n    margin-right: .8em;\n    border-radius: 4px 0 0 4px;\n  }\n"]
+            template: "\n\t<h1>{{title}}</h1>\n\n\t<h2>My Heroes</h2>\n\t<ul class=\"heroes\">\n\t    <li *ngFor=\"let hero of heroes\" (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\">\n\t        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t    </li>\n\t</ul>\n\n\t<my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n    ",
+            styles: ["\n\t  .selected {\n\t      background-color: #CFD8DC !important;\n    \t      color: white;\n\t  }\n\t\n\t  .heroes {\n\t      margin: 0 0 2em 0;\n\t      list-style-type: none;\n\t      padding: 0;\n\t      width: 15em;\n\t  }\n\n\t  .heroes li {\n\t      cursor: pointer;\n\t      position: relative;\n\t      left: 0;\n\t      background-color: #EEE;\n\t      margin: .5em;\n\t      padding: .3em 0;\n\t      height: 1.6em;\n\t      border-radius: 4px;\n\t  }\n\n\t  .heroes li.selected:hover {\n\t      background-color: #BBD8DC !important;\n\t      color: white;\n\t  }\n\n\t  .heroes li:hover {\n\t      color: #607D8B;\n\t      background-color: #DDD;\n\t      left: .1em;\n\t  }\n\n\t  .heroes .text {\n\t      position: relative;\n\t      top: -3px;\n\t  }\n\n\t  .heroes .badge {\n\t      display: inline-block;\n\t      font-size: small;\n\t      color: white;\n\t      padding: 0.8em 0.7em 0 0.7em;\n\t      background-color: #607D8B;\n\t      line-height: 1em;\n\t      position: relative;\n\t      left: -1px;\n\t      top: -4px;\n\t      height: 1.8em;\n\t      margin-right: .8em;\n\t      border-radius: 4px 0 0 4px;\n\t  }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
