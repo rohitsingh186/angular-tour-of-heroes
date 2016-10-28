@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 	BrowserModule,
 	FormsModule,
     HttpModule,
-    // InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
 	AppRoutingModule	
   ],
   declarations: [ AppComponent, HeroDetailComponent, HeroesComponent, DashboardComponent ],
