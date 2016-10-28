@@ -17,7 +17,10 @@ var HeroService = (function () {
         this.heroesUrl = 'app/heroes';
     }
     HeroService.prototype.getHeroes = function () {
-        return this.http.get(this.heroesUrl).toPromise().then(function (response) { return response.json().data; }).catch(this.handleError);
+        return this.http.get(this.heroesUrl)
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
     };
     HeroService.prototype.getHero = function (id) {
         return this.getHeroes().then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
